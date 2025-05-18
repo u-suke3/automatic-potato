@@ -1,2 +1,2 @@
 # automatic-potato
-test for CI
+hello world test.
