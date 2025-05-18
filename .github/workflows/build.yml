@@ -3,7 +3,7 @@ name: C Program Build and Release
 on:
   push:
     branches:
-      - main  # mainブランチにプッシュされたときにトリガー
+      - main
 
 jobs:
   build:
@@ -18,13 +18,13 @@ jobs:
 
       - name: Build the C program
         run: |
-          gcc -o my_program my_program.c  # my_program.cをビルド
+          gcc -o my_program my_program.c
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag: v1.0.0  # リリースのタグ
-          files: my_program  # アップロードするファイル
+          tag: v1.0.0
+          files: my_program
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
